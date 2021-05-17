@@ -8,9 +8,7 @@ codefellows delivery system transfered to the cloud
 
 ## Links and Resources
 
-- ci/cd (GitHub Actions)
-- back-end server url (when applicable)
-- front-end application (when applicable)
+- [github pullrequest for caps-cloud](https://github.com/fizzo999/caps-cloud/pull/1)
 
 ## Setup
 
