@@ -29,3 +29,7 @@ codefellows delivery system transfered to the cloud
 ### UML / Application Wiring Diagram
 
 #### <center> ![UML for caps cloud](assets/UML-caps-cloud.jpg) </center>
+
+### screenshot of 5 terminals with: 1.) sns pickup 2.) sqs delivered 3.) sns pickup 4.) sqs delivered 5.) driver
+
+#### <center> ![screenshot of 5 terminals with: 1.) sns pickup 2.) sqs delivered 3.) sns pickup 4.) sqs delivered 5.) driver ](assets/2123.PNG) </center>
