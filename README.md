@@ -28,6 +28,12 @@ codefellows delivery system transfered to the cloud
 
 #### <center> ![UML for caps cloud](assets/UML-caps-cloud.jpg) </center>
 
-### screenshot of 5 terminals with: 1.) sns pickup 2.) sqs delivered 3.) sns pickup 4.) sqs delivered 5.) driver
+### screenshot of 4 terminals with:
 
-#### <center> ![screenshot of 5 terminals with: 1.) sns pickup 2.) sqs delivered 3.) sns pickup 4.) sqs delivered 5.) driver ](assets/2123.PNG) </center>
+### 1.) sns pickup flowers 2.) sqs delivered flowers 3.) sns pickup acme 4.) sqs delivered acme
+
+#### <center> ![screenshot of 4 terminals with: 1.) sns pickup flowers 2.) sqs delivered flowers 3.) sns pickup acme 4.) sqs delivered acme ](assets/2125.PNG) </center>
+
+### screenshot of driver terminal processing orders for both vendors
+
+#### <center> ![screenshot of driver terminal processing orders for both vendors](assets/2126.PNG) </center>

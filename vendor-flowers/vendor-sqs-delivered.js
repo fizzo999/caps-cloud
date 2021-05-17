@@ -7,7 +7,7 @@ const flowersMessageArray = [];
 const app = Consumer.create({
   queueUrl: 'https://sqs.us-west-2.amazonaws.com/795215114173/capsCloud-vendor1-flowers',
   handleMessage: async (message) => {
-    flowersMessageArray.push(message);
+    flowersMessageArray.push(message.Body);
     console.log(message.Body);
   }
 });

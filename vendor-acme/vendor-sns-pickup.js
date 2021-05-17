@@ -11,39 +11,37 @@ const topic = 'arn:aws:sns:us-west-2:795215114173:capsCloudPickup.fifo';
 
 const queueUrl = 'https://sqs.us-west-2.amazonaws.com/795215114173/capsCloud-vendor2-acme';
 
-const data = { 
-  orderId: faker.datatype.uuid(), 
-  customer: faker.name.findName(), 
-  address: faker.address.streetAddress(), 
-  vendorId: queueUrl
-}
-
-const payload = {
-  Message: JSON.stringify(data),
-  TopicArn: topic,
-  MessageGroupId: '12345',
-  MessageDeduplicationId: faker.datatype.uuid()
-};
-
-// sns is a instance from the AWS SNS module
-// and it gives us the ability to publish a message
-// with details from up above (payload)
-
+let data, payload;
 let howMany = 20;
-
-// setInterval(() => {
-  for (let i=0; i < howMany; i++){
-    sns.publish(payload).promise()
-    .then(data => {
-      flowersPickupArray.push(data);
-      console.log(data);
-    })
-    .catch(console.error);
-  }
-  console.log(`YEP we sent the ${howMany} requests <<<<<<========`);
-  console.log(`and here is the Array of the ${howMany} orders ${flowersPickupArray} <<<<<<========`);
-  return 
-// }, 1000 );
+// for (let i=0; i < howMany; i++){
+  setInterval(() => {
+    data = { 
+      orderId: faker.datatype.uuid(), 
+      customer: faker.name.findName(), 
+      address: faker.address.streetAddress(), 
+      vendorId: queueUrl
+    }
+    payload = {
+      Message: JSON.stringify(data),
+      TopicArn: topic,
+      MessageGroupId: '12345',
+      MessageDeduplicationId: faker.datatype.uuid()
+    };
+    // sns is a instance from the AWS SNS module
+    // and it gives us the ability to publish a message
+    // with details from up above (payload)
+        sns.publish(payload).promise()
+        .then(dataThatComesBack => {
+          flowersPickupArray.push(payload);
+          console.log('here is the response of what came back', dataThatComesBack);
+          console.log('here is the payload that we sent to SNS', payload);
+        })
+        .catch(console.error);
+        console.log(`YEP we sent the ${howMany} requests <<<<<<========`);
+        console.log(`and here is the Array of the ${howMany} orders ${flowersPickupArray} <<<<<<========`);
+        return 
+      }, 1000 );
+// }
 
 // Vendors:
 // Vendors will post “pickup” messages containing delivery information into the SNS pickup topic
